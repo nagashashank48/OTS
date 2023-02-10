@@ -1,0 +1,31 @@
+import redux frrom redux
+
+
+const counterReducer=(state={counter:0},action)=>{
+if(action.type==increment){
+return {
+counter=state.counter+1
+};}
+return default state;
+};
+
+
+const store=redux.Createstore(counterReducer);
+
+
+ const counterSubscriber=()=>{
+const latestState=store.getState();
+};
+
+
+
+store.subscribe(counterSubscriber);
+
+store.dispatch({type:'increment'})
+
+1.first we create a store and assign it to a variable
+2.then we create a reducer with action and state 
+3.in reducer we will return anything related to state or anything
+4.we asssgin reducer to store so that when we create store the  return value of reducer will assign to created store
+5.now we will create subscriber to call or get the data from the store.
+6.finally we create a dispatch  to use the store data in components
